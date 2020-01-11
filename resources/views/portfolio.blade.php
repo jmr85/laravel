@@ -6,7 +6,7 @@
 	<h1>Portafolio</h1>
 	<ul>
 
-		@forelse($portfolio as $portfolioItem){
+		@forelse($portfolio as $portfolioItem)
 			<li>{{ $portfolioItem['title'] }} {{$loop->last? 'ultimo': ''}}</pre></li>
 		@empty
 			<li>No hay proyectos para mostrar</li>
