@@ -24,7 +24,9 @@ Route::get('contactos/{nombre?}', function ($nombre="Invitados") {
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
 Route::view('/contact', 'contact')->name('contact');
+Route::post('/contact', 'MessagesController@store')->name('contact');
 Route::get('/portfolio', 'PortfolioController@index')->name('portfolio');
+
 //Route::resource('projects', 'PortfolioController');
 //Route::resource('projects', 'PortfolioController')->only(['index','show']);
 //Route::resource('projects', 'PortfolioController')->except(['index','show']);
