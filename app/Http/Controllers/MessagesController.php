@@ -7,8 +7,10 @@ namespace App\Http\Controllers;
 class MessagesController extends Controller
 {
     public function store(){
-    	//sin parametro devuelve todo
-    	return request();
-    	//return $request->get('email');
+    	request()->validate([
+    		'name' => 'required',
+    		'email' => 'required | email'
+    	]);//si falla devuelve la pagina automaticamente
+    	return 'Datos validados';
     }
 }

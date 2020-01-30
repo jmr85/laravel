@@ -5,4 +5,4 @@
 			<li class="{{ setActive('portfolio') }}"><a href="/portfolio">Portfolio</a></li>
 			<li class="{{ setActive('contact') }}"><a href="/contact">Contact</a></li>
 		</ul>
-	</nav>
+</nav>
