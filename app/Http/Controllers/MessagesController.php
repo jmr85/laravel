@@ -12,7 +12,9 @@ class MessagesController extends Controller
     		'email' => 'required|email',
     		'subject' => 'required',
     		'content' => 'required|min:3'
-    	]);//si falla devuelve la pagina automaticamente
+    	], [
+    		'name.required' => __('I need your name')
+ 		]);//si falla devuelve la pagina automaticamente
     	return 'Datos validados';
     }
 }

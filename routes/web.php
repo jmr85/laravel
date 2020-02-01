@@ -21,6 +21,8 @@ Route::get('contactos/{nombre?}', function ($nombre="Invitados") {
     return view('home', compact('nombre'));
 })->name('home');*/
 
+App::setLocale('es');
+
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
 Route::view('/contact', 'contact')->name('contact');
