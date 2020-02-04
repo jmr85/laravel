@@ -6,10 +6,11 @@
 	<h1>Portafolio</h1>
 	<ul>
 
-		@forelse($portfolio as $portfolioItem)
-			<li>{{ $portfolioItem->title }} <br><small>{{ $portfolioItem->description }}</small><br>{{ $portfolioItem->created_at->format('d-m-yy') }} - {{ $portfolioItem->created_at->diffForHumans() }}</li><br>
+		@forelse($projects as $projectItem)
+			<li>{{ $projectItem->title }} <br><small>{{ $projectItem->description }}</small><br>{{ $projectItem->created_at->format('d-m-yy') }} - {{ $projectItem->created_at->diffForHumans() }}</li><br>
 		@empty
 			<li>No hay proyectos para mostrar</li>
 		@endforelse
+		{{ $projects->links() }}
 	</ul>
 @endsection
