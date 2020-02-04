@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Project;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class PortfolioController extends Controller
 {
@@ -15,7 +15,7 @@ class PortfolioController extends Controller
     public function index()
     {
 
-        $portfolio = DB::table('projects')->get(); //obtiene todos los datos
+        $portfolio = Project::get(); //obtiene todos los datos
         return view('portfolio', compact('portfolio'));
     }
 }
