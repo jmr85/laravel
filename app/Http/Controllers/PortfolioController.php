@@ -15,7 +15,7 @@ class PortfolioController extends Controller
     public function index()
     {
 
-        $portfolio = Project::get(); //obtiene todos los datos
+        $portfolio = Project::orderBY('created_at','DESC')->get();// Project::latest()->get() hace lo mismo
         return view('portfolio', compact('portfolio'));
     }
 }
