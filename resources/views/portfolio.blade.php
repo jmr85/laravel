@@ -7,7 +7,7 @@
 	<ul>
 
 		@forelse($projects as $projectItem)
-			<li>{{ $projectItem->title }} <br><small>{{ $projectItem->description }}</small><br>{{ $projectItem->created_at->format('d-m-yy') }} - {{ $projectItem->created_at->diffForHumans() }}</li><br>
+			<li><a href="{{ route('portfolio.show', $projectItem) }}">{{ $projectItem->title }}</a> <br><small>{{ $projectItem->description }}</small><br>{{ $projectItem->created_at->format('d-m-yy') }} - {{ $projectItem->created_at->diffForHumans() }}</li><br>
 		@empty
 			<li>No hay proyectos para mostrar</li>
 		@endforelse

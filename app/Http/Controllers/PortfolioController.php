@@ -18,4 +18,8 @@ class PortfolioController extends Controller
             'projects' => Project::latest()->paginate(1)
         ]);// por defecto la paginacion es de 15 items por pagina
     }
+    public function show($id)
+    {
+        return $id;
+    }
 }
