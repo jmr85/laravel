@@ -20,6 +20,7 @@ class PortfolioController extends Controller
     }
     public function show($id)
     {
-        return Project::find($id);
+        $project =  Project::find($id);
+        return view('projects.show', compact('project'));
     }
 }
