@@ -14,8 +14,8 @@ class PortfolioController extends Controller
      */
     public function index()
     {
-
-        $projects = Project::orderBY('created_at','DESC')->paginate(1);// por defecto la paginacion es de 15 items por pagina
-        return view('portfolio', compact('projects'));
+        return view('portfolio',[
+            'projects' => Project::latest()->paginate(1)
+        ]);// por defecto la paginacion es de 15 items por pagina
     }
 }
