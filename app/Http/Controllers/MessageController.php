@@ -5,7 +5,7 @@ use App\Mail\MessageReceived;
 use Illuminate\Support\Facades\Mail;
 //use Illuminate\Http\Request;
 
-class MessagesController extends Controller
+class MessageController extends Controller
 {
     public function store(){
     	$message = request()->validate([
