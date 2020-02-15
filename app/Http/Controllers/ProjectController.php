@@ -18,9 +18,8 @@ class ProjectController extends Controller
             'projects' => Project::latest()->paginate(1)
         ]);// por defecto la paginacion es de 15 items por pagina
     }
-    public function show($id)
+    public function show(Project $id)
     {
-        $project =  Project::findOrFail($id);
-        return view('projects.show', compact('project'));
+        return view('projects.show', ['project' => $id]);
     }
 }
