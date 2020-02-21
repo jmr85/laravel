@@ -22,4 +22,12 @@ class ProjectController extends Controller
     {
         return view('projects.show', ['project' => $id]);
     }
+    public function create()
+    {
+        return view('projects.create');
+    }
+    public function store()
+    {
+        return request();
+    }
 }
