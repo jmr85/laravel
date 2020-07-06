@@ -24,10 +24,15 @@ class ProjectController extends Controller
     }
     public function create()
     {
+        // aca solo retorno la vista create
         return view('projects.create');
     }
     public function store()
     {
-        return request();
+        $Project::create([
+            'title' => request('title'),
+            'url' => request('url'),
+            'description' => request('description'),
+        ]);
     }
 }

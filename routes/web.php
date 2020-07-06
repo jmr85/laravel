@@ -17,7 +17,7 @@ Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
 
 Route::get('/portfolio', 'ProjectController@index')->name('projects.index');
-Route::get('/portfolio/create', 'ProjectController@create')->name('projects.create');
+Route::get('/portfolio/create', 'ProjectController@create')->name('projects.create');//create tiene q estar x arriba de show y store
 Route::post('/portfolio', 'ProjectController@store')->name('projects.store');
 Route::get('/portfolio/{id}', 'ProjectController@show')->name('projects.show');
 
