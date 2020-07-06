@@ -29,10 +29,13 @@ class ProjectController extends Controller
     }
     public function store()
     {
-        $Project::create([
+        //aca almacena los datos ingresados en en el metodo create()
+        Project::create([
             'title' => request('title'),
             'url' => request('url'),
             'description' => request('description'),
         ]);
+        //nos lleva al listado de proyectos y se va a ver el proyecto creado ya que es el mas reciente
+        return redirect()->route('projects.index');
     }
 }
