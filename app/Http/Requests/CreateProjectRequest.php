@@ -37,4 +37,11 @@ class CreateProjectRequest extends FormRequest
             'description' => 'required',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'El proyecto necesita un titulo',//o con __()multidioma           
+        ];
+    }
 }
