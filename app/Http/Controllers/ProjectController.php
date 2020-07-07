@@ -29,8 +29,16 @@ class ProjectController extends Controller
     }
     public function store()
     {
+        /* 
+        solo va a devolver los campos validados  que definan aca en validacion sin importar 
+        cuantos campos se han enviado en el formulario*/
+        $fields = request()->validate([
+            'title' => 'required',
+            'url' => 'required',
+            'description' => 'required',
+        ]);
         //aca almacena los datos ingresados en en el metodo create()
-        Project::create(request()->all());
+        Project::create($fields);
         //nos lleva al listado de proyectos y se va a ver el proyecto creado ya que es el mas reciente
         return redirect()->route('projects.index');
     }
