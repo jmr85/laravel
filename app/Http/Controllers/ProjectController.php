@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Project;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -27,18 +28,15 @@ class ProjectController extends Controller
         // aca solo retorno la vista create
         return view('projects.create');
     }
-    public function store()
+    public function store(CreateProjectRequest $request)
     {
+        //CreateProjectRequest es el parametro inyectado con la validacion hecha en rules() 
         /* 
         solo va a devolver los campos validados  que definan aca en validacion sin importar 
         cuantos campos se han enviado en el formulario*/
-        $fields = request()->validate([
-            'title' => 'required',
-            'url' => 'required',
-            'description' => 'required',
-        ]);
+       
         //aca almacena los datos ingresados en en el metodo create()
-        Project::create($fields);
+        Project::create($request->validated());
         //nos lleva al listado de proyectos y se va a ver el proyecto creado ya que es el mas reciente
         return redirect()->route('projects.index');
     }

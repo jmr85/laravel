@@ -3,6 +3,13 @@
 @section('title', __('Create'))
 
 @section('content')
+
+	@if($errors->any())
+		@foreach($errors->all() as $error)
+				<li>{{ $error }}</li>
+		@endforeach
+	@endif
+	
 	<h1>@lang('Create New Project')</h1>
 	<form method="POST" action="{{ route('projects.store') }}">
 		@csrf
