@@ -16,7 +16,7 @@ class ProjectController extends Controller
     public function index()
     {
         return view('projects.index', [
-            'projects' => Project::latest()->paginate(1)
+            'projects' => Project::latest()->paginate(4)
         ]);// por defecto la paginacion es de 15 items por pagina
     }
     public function show(Project $id)
@@ -55,5 +55,10 @@ class ProjectController extends Controller
     {
         $id->update($request->validated());
         return redirect()->route('projects.show', $id);
+    }
+    public function destroy(Project $id)
+    {
+        $id->delete();
+        return redirect()->route('projects.index');//similar a la accion de store()
     }
 }

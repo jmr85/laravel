@@ -25,5 +25,7 @@ Route::patch('/portfolio/{id}', 'ProjectController@update')->name('projects.upda
 Route::post('/portfolio', 'ProjectController@store')->name('projects.store');
 Route::get('/portfolio/{id}', 'ProjectController@show')->name('projects.show');//devuelve un projecto x
 
+Route::delete('/portfolio/{id}', 'ProjectController@destroy')->name('projects.destroy');
+
 Route::view('/contact', 'contact')->name('contact');
 Route::post('/contact', 'MessageController@store')->name('messages.store');
