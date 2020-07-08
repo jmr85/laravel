@@ -27,7 +27,9 @@ class ProjectController extends Controller
     public function create()
     {
         // aca solo retorno la vista create
-        return view('projects.create');
+        return view('projects.create', ['project' => new Project]);
+        //se  agrega segundo parametro con el new para utilizar una vez el old() el new Project devuelve null
+        // o sea que no tiene funcioanalidad
     }
     //metodo para procesar formulario de create()
     public function store(SaveProjectRequest $request)
