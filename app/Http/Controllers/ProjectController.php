@@ -23,11 +23,13 @@ class ProjectController extends Controller
     {
         return view('projects.show', ['project' => $id]);
     }
+    //metodo que muestra el formulario
     public function create()
     {
         // aca solo retorno la vista create
         return view('projects.create');
     }
+    //metodo para procesar formulario de create()
     public function store(SaveProjectRequest $request)
     {
         //SaveProjectRequest es el parametro inyectado con la validacion hecha en rules() 
@@ -40,10 +42,13 @@ class ProjectController extends Controller
         //nos lleva al listado de proyectos y se va a ver el proyecto creado ya que es el mas reciente
         return redirect()->route('projects.index');
     }
+
+    //metodo que muestra formulario con el @method('PATH')
     public function edit(Project $id)
     {
         return view('projects.edit', ['project' => $id]);
     }
+    //metodo para procesar formulario de edit()
     public function update(Project $id, SaveProjectRequest $request)
     {
         $id->update($request->validated());

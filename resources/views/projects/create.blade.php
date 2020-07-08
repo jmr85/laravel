@@ -15,15 +15,15 @@
 		@csrf
 		<label>
 			Titulo de proyecto <br/>
-			<input type='text' name="title"><br>
+			<input type='text' name="title" value="{{ old('title') }}"><br>
 		</label>
 		<label>
 			URL del proyecto <br/>
-			<input type='text' name="url" ><br>
+			<input type='text' name="url" value="{{ old('url') }}"><br>
 		</label>
 		<label>
 			Descripcion del proyecto <br/>
-			<textarea name="description"></textarea><br>
+			<textarea name="description">{{ old('description') }}</textarea><br>
 		</label>
 		<button>@lang('Send')</button>
 	</form>

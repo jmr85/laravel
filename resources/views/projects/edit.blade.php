@@ -17,15 +17,15 @@
 		
 		<label>
 			Titulo de proyecto <br/>
-		<input type='text' name="title" value="{{$project->title}}"><br>
+		<input type='text' name="title" value="{{ old('title', $project->title) }}"><br>
 		</label>
 		<label>
 			URL del proyecto <br/>
-			<input type='text' name="url" value="{{$project->url}}"><br>
+			<input type='text' name="url" value="{{ old('url', $project->url) }}"><br>
 		</label>
 		<label>
 			Descripcion del proyecto <br/>
-			<textarea name="description">{{$project->description}}</textarea><br>
+			<textarea name="description">{{ old('description', $project->description) }}</textarea><br>
 		</label>
 		<button>@lang('Update')</button>
 	</form>
