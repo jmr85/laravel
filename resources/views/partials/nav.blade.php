@@ -4,5 +4,6 @@
 			<li class="{{ setActive('about') }}"><a href="{{route('about')}}">@lang('About')</a></li>
 			<li class="{{ setActive('projects.*') }}"><a href="{{route('projects.index')}}">@lang('Projects')</a></li>
 			<li class="{{ setActive('contact') }}"><a href="{{route('contact')}}">@lang('Contact')</a></li>
+			<li><a href="{{route('login')}}">@lang('Login')</a></li>
 		</ul>
 </nav>

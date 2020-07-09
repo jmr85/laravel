@@ -4,8 +4,11 @@
 
 @section('content')
 	<h1>Home</h1>
-	Bienvenid@ {{ $nombre ?? 'Invitado' }}
-	{{ auth()->user() }}
+
+	@auth
+		{{ auth()->user()->name }}
+	@endauth
+
 @endsection
 
 
