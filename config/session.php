@@ -18,7 +18,7 @@ return [
     |
     */
 
-    'driver' => env('SESSION_DRIVER', 'cookie'),
+    'driver' => env('SESSION_DRIVER', 'file'),//tenia cookie 8 julio 2020
 
     /*
     |--------------------------------------------------------------------------

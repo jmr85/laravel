@@ -3,7 +3,7 @@
 @section('title', __('Edit'))
 
 @section('content')
-
+	
 	@include('partials.validation-errors')
 	
 	<h1>@lang('Edit')</h1>
