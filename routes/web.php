@@ -22,7 +22,7 @@ Route::view('/about', 'about')->name('about');
 */
 Route::resource('portfolio', 'ProjectController')
     ->parameters(['portfolio' => 'project'])
-    ->names('projects');
+    ->names('projects')->middleware('auth');
 /* 
 Route::get('/portfolio', 'ProjectController@index')->name('projects.index');//devuelve listado
 Route::get('/portfolio/create', 'ProjectController@create')->name('projects.create');//create tiene q estar x arriba de show y store
