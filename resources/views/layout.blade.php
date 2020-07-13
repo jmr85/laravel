@@ -2,12 +2,8 @@
 <html>
 <head>
 	<title>@yield('title', 'Aprendible')</title>
-	<style>
-		.active a {
-			color:red;
-			text-decoration: none;
-		}
-	</style>
+	<link rel="stylesheet" href="/css/app.css">
+	<script src="/js/app.js" defer></script>
 </head>
 <body>
 	@include('partials.nav')
