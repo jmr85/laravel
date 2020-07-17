@@ -3,23 +3,51 @@
 @section('title', 'Contact')
 
 @section('content')
-	<h1>@lang('Contact')</h1>
-
-	<form method="POST" action="{{ route('messages.store') }}">
-		@csrf
-		<input name="name" placeholder="Nombre" ><br>
-		{!! $errors->first('name', '<small>:message</small><br>') !!}
-
-		<input type="text" name="email" placeholder="Email..." value="jmr@mail.com"><br>
-		{!! $errors->first('email', '<small>:message</small><br>') !!}
-
-		<input name="subject" placeholder="Asunto..." value="Asunto de prueba"><br>
-		{!! $errors->first('subject', '<small>:message</small><br>') !!}
-
-		<textarea name="content" placeholder="Mensaje...">Mensaje de prueba</textarea><br>
-		{!! $errors->first('content', '<small>:message</small><br>') !!}
-
-		<button>@lang('Send')</button>
-	</form>
-		
+	<div class="container">
+		<h1>@lang('Contact')</h1>
+		<form class="bg-white shadow rounded py-3 px-4" method="POST" action="{{ route('messages.store') }}">
+			@csrf
+			<div class="form-group">
+				<label for="name">@lang('validation.attributes.name')</label>
+				<input id="name" class="form-control bg-white shadow-sm @error('name') is-invalid @else border-0 @enderror" 
+				name="name" placeholder="@lang('validation.attributes.name')" value="{{ old('name') }}">
+				@error('name')
+					<span class="invalid-feedback" role="alert">
+						<strong>{{ $message }}</strong>
+					</span>
+				@enderror
+			</div>
+			<div class="form-group">
+				<label for="email">@lang('validation.attributes.email')</label>
+				<input id="email" class="form-control bg-white shadow-sm @error('email') is-invalid @else border-0 @enderror" type="text" 
+				name="email" placeholder="@lang('validation.attributes.email')..." value="{{ old('email') }}">
+				@error('email')
+					<span class="invalid-feedback" role="alert">
+						<strong>{{ $message }}</strong>
+					</span>
+				@enderror
+			</div>
+			<div class="form-group">
+				<label for="subject">@lang('validation.attributes.subject')</label>
+				<input id="subject" class="form-control bg-white shadow-sm @error('subject') is-invalid @else border-0 @enderror" 
+				name="subject" placeholder="@lang('validation.attributes.subject')..." value="{{ old('subject') }}">
+				@error('subject')
+					<span class="invalid-feedback" role="alert">
+						<strong>{{ $message }}</strong>
+					</span>
+				@enderror
+			</div>
+			<div class="form-group">
+				<label for="content">@lang('validation.attributes.message') </label>
+				<textarea id="content" class="form-control bg-white shadow-sm @error('content') is-invalid @else border-0 @enderror" 
+				name="content" placeholder="@lang('validation.attributes.message')...">{{ old('content') }}</textarea>
+				@error('content')
+					<span class="invalid-feedback" role="alert">
+						<strong>{{ $message }}</strong>
+					</span>
+				@enderror
+			</div>
+			<button class="button button-warning">@lang('Send')</button>
+		</form>
+	</div>
 @endsection
