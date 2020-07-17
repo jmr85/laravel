@@ -10928,8 +10928,7 @@ a.text-dark:focus {
   }
 }
 
-.active a {
-  color: green;
-  text-decoration: none;
+.h-screen {
+  height: 100vh;
 }
 
