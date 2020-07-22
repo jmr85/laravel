@@ -17,7 +17,7 @@
             @include('partials.session-status')
         </header>
 	
-		<main>
+		<main class="py-4"> {{--padding nivel 4 para que tenga mas espacio abajo y  el costado --}}
             @yield('content')
 		</main>
 		

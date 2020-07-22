@@ -3,16 +3,40 @@
 @section('title', 'Portfolio')
 
 @section('content')
-	<h1>@lang('Projects')</h1>
-    @auth
-        <a href="{{route('projects.create')}}">@lang('Create New Project')</a>
-    @endauth
-	<ul>
-		@forelse($projects as $projectItem)
-			<li><a href="{{ route('projects.show', $projectItem) }}">{{ $projectItem->title }}</a> <br><small>{{ $projectItem->description }}</small><br>{{ $projectItem->created_at->format('d-m-yy') }} - {{ $projectItem->created_at->diffForHumans() }}</li><br>
-		@empty
-			<li>No hay proyectos para mostrar</li>
-		@endforelse
-		{{ $projects->links() }}
-	</ul>
+	<div class="container">
+		<div class="d-flex justify-content-between align-items-center mb-3">
+			<h1 class="display-4 mb-0">@lang('Projects')</h1>			
+			@auth
+				<a class="btn btn-primary" href="{{route('projects.create')}}">@lang('Create New Project')</a>
+			@endauth
+		</div>
+		<p class="lead text-secondary">
+			Proyectos realizados lorem ipsum dolor sit amet, consectetur adipisicing elit.
+		</p>
+		<ul class="list-group">
+			@forelse($projects as $projectItem)
+				<li class="list-group-item border-0 mb-3 shadow-sm">				
+					<a 	
+						class="text-secondary d-flex justify-content-between align-items-center align-items-center"
+						href="{{ route('projects.show', $projectItem) }}"
+					>
+						<span class="font-weight-bold"> {{--  para que no se vea tan fuerte se cambia la fuente --}}
+							{{ $projectItem->title }}
+						</span><br>
+						{{-- <span class="text-secondary font-weight-bold">
+							{{ $projectItem->description }}
+						</span><br> --}}
+						<span class="text-black-50"> {{--un poco mas claro que text-secondary--}}
+							{{ $projectItem->created_at->format('d-m-yy') }} - {{ $projectItem->created_at->diffForHumans() }}
+						</span>
+					</a>
+				</li>
+			@empty
+				<li class="list-group-item border-0 mb-3 shadow-sm">
+				 No hay proyectos para mostrar
+				</li>
+			@endforelse
+			{{ $projects->links() }}
+		</ul>
+	</div>
 @endsection

@@ -9,12 +9,13 @@
 				<form class="bg-white shadow rounded py-3 px-4" method="POST" action="{{ route('messages.store') }}">
 					@csrf
 					<h1 class="display-4">@lang('Contact')</h1>
+					<hr>
 					<div class="form-group">
 						{{--
 							funcion ucfirst() que viene en php es para dejar la palabra con primer letra capital 
 							solo funciono con el translate __() no asi con @lang()
 						--}}
-						<label for="name">{{ ucfirst(__('validation.attributes.name'))}}</label>
+						<label for="name"> {{ ucfirst(__('validation.attributes.name')) }} </label>
 						<input id="name" class="form-control bg-white shadow-sm @error('name') is-invalid @else border-0 @enderror" 
 						name="name" placeholder="@lang('validation.attributes.name')" value="{{ old('name') }}">
 						@error('name')

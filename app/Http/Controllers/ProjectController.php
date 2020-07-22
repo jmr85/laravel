@@ -21,7 +21,7 @@ class ProjectController extends Controller
     public function index()
     {
         return view('projects.index', [
-            'projects' => Project::latest()->paginate(4)
+            'projects' => Project::latest()->paginate()
         ]);// por defecto la paginacion es de 15 items por pagina
     }
     public function show(Project $project)

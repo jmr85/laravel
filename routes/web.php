@@ -35,4 +35,4 @@ Route::delete('/portfolio/{id}', 'ProjectController@destroy')->name('projects.de
 
 Route::view('/contact', 'contact')->name('contact');
 Route::post('/contact', 'MessageController@store')->name('messages.store');
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);
