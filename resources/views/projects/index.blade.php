@@ -33,7 +33,7 @@
 				</li>
 			@empty
 				<li class="list-group-item border-0 mb-3 shadow-sm">
-				 No hay proyectos para mostrar
+					@lang('There are no projects"')
 				</li>
 			@endforelse
 			{{ $projects->links() }}

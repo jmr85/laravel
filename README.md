@@ -1,7 +1,7 @@
 # Guide to install the project
 
 1. Download the repository
-2. Unzip the folder inside the Valet / Laragon directory
+2. Unzip the folder inside the Valet/Laragon directory
 3. Rename the folder (Optional)
 4. Enter the folder from the terminal `cd directory/of/the/folder`
 5. Copy the contents of the `.env.example` file to a new file called` .env`
@@ -12,8 +12,8 @@
         * DB_DATABASE =
         * DB_USERNAME =
         * DB_PASSWORD =
-    * Define the credentials of [Mailtrap] (https://mailtrap.io/) (Optional)
-    * Define the credentials of [Sendgrid] (https://sendgrid.com/) (To send emails in production)
+    * Define the credentials of [Mailtrap](https://mailtrap.io/) (Optional)
+    * Define the credentials of [Sendgrid](https://sendgrid.com/) (To send emails in production)
 8. Run `composer install`
 9. Run `php artisan key: generate`
 10. Run `php artisan migrate`
@@ -43,3 +43,20 @@
 13. Abre la aplicación en el navegador
 
 #### Este proyecto creado está bajo la [licencia MIT](https://opensource.org/licenses/MIT).
+
+
+![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-home.png)
+
+![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-about.png)
+
+![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-contact.png)
+
+![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-portfolio.png)
+
+![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-portfolios.png)
+
+![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-create.png)
+
+![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-edit.png)
+
+![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-after-update.png)

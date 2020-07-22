@@ -47,7 +47,7 @@ class ProjectController extends Controller
         //aca almacena los datos ingresados en en el metodo create()
         Project::create($request->validated());
         //nos lleva al listado de proyectos y se va a ver el proyecto creado ya que es el mas reciente
-        return redirect()->route('projects.index')->with('status', 'El proyecto fue creado con exito');
+        return redirect()->route('projects.index')->with('status', __('Save message'));
     }
 
     //metodo que muestra formulario con el @method('PATH')
@@ -63,11 +63,11 @@ class ProjectController extends Controller
             en el controlador ->parameters(['portfolio' => 'project']) tiene ser project 
         */
         $project->update($request->validated());
-        return redirect()->route('projects.show', $project)->with('status', 'El proyecto fue actualizado con exito');
+        return redirect()->route('projects.show', $project)->with('status', __('Update message'));
     }
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route('projects.index')->with('status', 'El proyecto fue eliminado con exito');//similar a la accion de store()
+        return redirect()->route('projects.index')->with('status', __('Deletion message'));//similar a la accion de store()
     }
 }

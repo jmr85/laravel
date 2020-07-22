@@ -1,6 +1,6 @@
 @csrf
 <div class="form-group">
-	<label for="title">Titulo de proyecto</label>
+	<label for="title">@lang('Project title')</label>
 	<input class="form-control border-0 bg-light shadow-sm" 
 		id="title" 
 		type='text' 
@@ -9,7 +9,7 @@
 	>	
 </div>	
 <div class="form-group">
-	<label for="url">URL del proyecto</label>
+	<label for="url">@lang('Project url')</label>
 	<input class="form-control border-0 bg-light shadow-sm" 
 		id="url" 
 		type='text' 
@@ -18,7 +18,7 @@
 	>
 </div>
 <div class="form-group">
-	<label for="description">Descripcion del proyecto</label>
+	<label for="description">@lang('Project description')</label>
 	<textarea class="form-control border-0 bg-light shadow-sm" 
 		id="description" 
 		name="description"
