@@ -19,7 +19,7 @@
 10. Run `php artisan migrate`
 13. Open the application in the browser
 
-#### This created project is under the [MIT license] (https://opensource.org/licenses/MIT).
+#### This created project is under the [MIT license](https://opensource.org/licenses/MIT).
 
 # Guía para instalar el proyecto
 
