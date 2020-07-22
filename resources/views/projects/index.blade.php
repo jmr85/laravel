@@ -11,7 +11,7 @@
 			@endauth
 		</div>
 		<p class="lead text-secondary">
-			Proyectos realizados lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			Projects lorem ipsum dolor sit amet, consectetur adipisicing elit.
 		</p>
 		<ul class="list-group">
 			@forelse($projects as $projectItem)
