@@ -45,18 +45,18 @@
 #### Este proyecto creado está bajo la [licencia MIT](https://opensource.org/licenses/MIT).
 
 
-![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-home.png)
+![screen](https://github.com/jmr85/laravel/blob/master/view-home.png)
 
-![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-about.png)
+![screen](https://github.com/jmr85/laravel/blob/master/view-about.png)
 
-![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-contact.png)
+![screen](https://github.com/jmr85/laravel/blob/master/view-contact.png)
 
-![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-portfolio.png)
+![screen](https://github.com/jmr85/laravel/blob/master/view-portfolio.png)
 
-![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-portfolios.png)
+![screen](https://github.com/jmr85/laravel/blob/master/view-portfolios.png)
 
-![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-create.png)
+![screen](https://github.com/jmr85/laravel/blob/master/view-create.png)
 
-![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-edit.png)
+![screen](https://github.com/jmr85/laravel/blob/master/view-edit.png)
 
-![screen](https://github.com/jmr85/battery-level-notification/blob/master/view-after-update.png)
+![screen](https://github.com/jmr85/laravel/blob/master/view-after-update.png)
