@@ -84,6 +84,13 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
+         /* 
+            Validator::make reemplaza a SaveUserRequest ya que
+            fue la unica manera de destrabar de que el mail
+            del user que esta editando lo ignore, desde el SaveUserRequest no lo 
+            podia hacer funcionar, o sea la clase SaveUserRequest 
+            no se esta usando, se podria eliminar
+         */
         $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => [
