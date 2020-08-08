@@ -10,9 +10,6 @@
 			</div>
 			<div class="col-12 col-lg-6">
 					<h1 class="display-4 text-primary">@lang('About')</h1>
-					{{-- @auth
-						{{ auth()->user()->name }}
-					@endauth --}}
 					<p class="lead text-secondary">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 						Cum, quasi non perspiciatis corrupti a repellendus numquam 

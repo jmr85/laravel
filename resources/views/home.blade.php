@@ -1,15 +1,12 @@
 @extends('layout')
 
-@section('title', __('Home'))
+@section('title', __('Home') ." ". env('APP_NAME'))
 
 @section('content')
     <div class="container">
 		<div class="row">
 			<div class="col-12 col-lg-6">
 					<h1 class="display-4 text-primary">@lang('Web development')</h1>
-					{{-- @auth
-						{{ auth()->user()->name }}
-					@endauth --}}
 					<p class="lead text-secondary">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
 						Cum, quasi non perspiciatis corrupti a repellendus numquam 

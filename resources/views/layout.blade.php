@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>@yield('title', 'Aprendible')</title>
+	<title>@yield('title', env('APP_NAME'))</title>
 	{{-- indicamos la escala inicial al momento de cargar la pagina, va a ser 1 o sea 100% --}}
 	{{-- el ancho de la aplicacion sea el mismo ancho del dispositivo --}}
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,7 +13,7 @@
 <body>
 	<div id="app" class="d-flex flex-column h-screen justify-content-between"><!-- lo requiere VueJS -->
 		<header>
-            @include('partials.nav')
+            @include('partials.nav') {{-- aca va el Dropdown para que se ve el img o nombre perfil--}}
             @include('partials.session-status')
         </header>
 	

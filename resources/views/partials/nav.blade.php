@@ -8,7 +8,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="nav nav-pills"> {{-- ubica horizontalmente los liks, nav-pills es el relleno simlar a un boton --}}
+			<ul class="nav nav-pills ml-auto"> {{-- ubica horizontalmente los liks, nav-pills es el relleno simlar a un boton --}}
 				<li class="nav-item">
 					<a class="nav-link {{ setActive('home') }}"  href="{{route('home')}}">
 						{{-- nav-link y {{setActive('home')}} es lo mismo que nav-link y active  --}}
@@ -38,15 +38,38 @@
 						</a>
 					</li>
 				@else		
-					<li class="nav-item"> 
+					{{-- <li class="nav-item"> 
 						<a class="nav-link {{ setActive('logout-form') }}" href="#" onclick="event.preventDefault();
 							document.getElementById('logout-form').submit();">
 							{{ __('Logout') }}
 						</a>
-					</li>			
+					</li> --}}
+					@if ( auth()->user()->hasRoles(['admin']) )
+						<li class="nav-item" >
+							<a class="nav-link {{ setActive('user.*') }}" href="{{ route('user.index') }}">Usuarios</a>
+						</li>
+					@endif
+					
+					<li class="nav-item dropdown">
+						<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+							{{ auth()->user()->name }} <span class="caret"></span>{{--caret es la flecha hacia abajo que indica que es dropdown--}}
+						</a>
+
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="{{ route('logout') }}"
+							   onclick="event.preventDefault();
+											 document.getElementById('logout-form').submit();">
+								{{ __('Logout') }}
+							</a>
+
+							<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+								@csrf
+							</form>
+						</div>
+					</li>		
 				@endguest
 			</ul>
-		</div>
+		</div><!-- /.navbar-collapse -->
 	</div>
 </nav>
 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

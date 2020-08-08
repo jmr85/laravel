@@ -13,6 +13,10 @@
 
 App::setLocale('es');
 
+Route::get('roles', function(){
+    return \App\Role::all();
+});
+
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
 /*
@@ -20,17 +24,24 @@ Route::view('/about', 'about')->name('about');
     funciones del controller hay que reemplazar $id por $project porque el resource 
     tiene ->parameters(['portfolio' => 'project']) si no va a dar error la aplicación
 */
+
+
 Route::resource('portfolio', 'ProjectController')
     ->parameters(['portfolio' => 'project'])
     ->names('projects');
+    
+Route::resource('user', 'UserController');
+
 /* 
-Route::get('/portfolio', 'ProjectController@index')->name('projects.index');//devuelve listado
-Route::get('/portfolio/create', 'ProjectController@create')->name('projects.create');//create tiene q estar x arriba de show y store
-Route::get('/portfolio/{id}/edit', 'ProjectController@edit')->name('projects.edit');
-Route::patch('/portfolio/{id}', 'ProjectController@update')->name('projects.update');//similar a @show pero cambia tipo PATCH
-Route::post('/portfolio', 'ProjectController@store')->name('projects.store');
-Route::get('/portfolio/{id}', 'ProjectController@show')->name('projects.show');//devuelve un projecto x
-Route::delete('/portfolio/{id}', 'ProjectController@destroy')->name('projects.destroy'); 
+    Reemplazados por Route::resource('portfolio', 'ProjectController');
+
+    Route::get('/portfolio', 'ProjectController@index')->name('projects.index');//devuelve listado
+    Route::get('/portfolio/create', 'ProjectController@create')->name('projects.create');//create tiene q estar x arriba de show y store
+    Route::get('/portfolio/{id}/edit', 'ProjectController@edit')->name('projects.edit');
+    Route::patch('/portfolio/{id}', 'ProjectController@update')->name('projects.update');//similar a @show pero cambia tipo PATCH
+    Route::post('/portfolio', 'ProjectController@store')->name('projects.store');
+    Route::get('/portfolio/{id}', 'ProjectController@show')->name('projects.show');//devuelve un projecto x
+    Route::delete('/portfolio/{id}', 'ProjectController@destroy')->name('projects.destroy'); 
 */
 
 Route::view('/contact', 'contact')->name('contact');

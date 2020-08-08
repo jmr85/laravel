@@ -28,6 +28,30 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+    public function roles()
+    {
+        // belongsTo (pertenece a)
+        // belongsToMany (pertenece a muchos)
+        // un user puede tener muchos roles por el ToMany
+        return $this->belongsToMany(Role::class);
+    }
+
+    public function hasRoles(array $roles)
+    {
+        foreach ($roles as $role) 
+        {
+            foreach ($this->roles as $userRole) 
+            {
+                if ($userRole->name === $role) 
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
     /**
      * The attributes that should be cast to native types.
      *

@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
+// valida nuevo project y edicion project
 //sirve para procesar validacion de metodos store() y update()
 class SaveProjectRequest extends FormRequest
 {
