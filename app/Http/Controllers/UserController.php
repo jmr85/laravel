@@ -13,8 +13,8 @@ class UserController extends Controller
     public function __construct()
     {
         // si no esta autenticado no muestra nada relacionado a users y redirecciona al login
-        $this->middleware('auth');
-        $this->middleware('roles:admin');
+        $this->middleware('auth', ['except' => ['show']]);
+        $this->middleware('roles:admin', ['except' => ['edit','update','show']]);
     }
     /**
      * Display a listing of the resource.
@@ -58,7 +58,9 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -70,6 +72,8 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id);
+
+        $this->authorize($user); 
 
         return view('users.edit', compact('user'));
     }
@@ -98,6 +102,11 @@ class UserController extends Controller
                 Rule::unique('users')->ignore($user->id),
             ],
         ])->validate();
+
+        //el primer parametro se lo pasa automaticamente laravel
+        // que es el user auth como en UserPolicy
+        $this->authorize($user);
+
         $user->update($validator);
 
         // back devuelve la url anterior que era users index
@@ -113,6 +122,12 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrFail($id);
+
+        $this->authorize($user);
+        
+        $user->delete();
+
+        return back();
     }
 }

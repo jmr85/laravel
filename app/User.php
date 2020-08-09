@@ -52,6 +52,11 @@ class User extends Authenticatable
         return false;
     }
 
+    public function isAdmin()
+    {
+        return $this->hasRoles(['admin']);
+    }
+
     /**
      * The attributes that should be cast to native types.
      *
