@@ -22,10 +22,10 @@
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
             <td>
-                @foreach ($user->roles as $role)
-                    {{--foreach es para mostrar muchos roles por user--}}
-                    {{ $role->display_name }}
-                @endforeach
+                {{--esta Collection muestra muchos roles por user 
+                    a traves de pluck() que es la key 'display_name'
+                --}}
+                {{ $user->roles->pluck('display_name')->implode(' - ') }}           
             </td>
             <td>
                 <a class="btn btn-info btn-xs" 
